@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ToastUtilityNew {
+class ToastUtility {
     
     class func showToast(message : String, controller: UIViewController) {
         let toastLabel = UILabel(frame: CGRect(x: controller.view.frame.size.width/2 - 150, y: controller.view.frame.size.height - 150, width: 300, height: 35))
@@ -50,28 +50,28 @@ class ToastUtilityNew {
         }
         
         // MARK: Builder Set Methods
-        func setColor(background: UIColor, text: UIColor) -> ToastUtilityNew.Builder {
+        func setColor(background: UIColor, text: UIColor) -> ToastUtility.Builder {
             toast.backgroundColor   = background
             toast.textColor         = text
             return self
         }
         
-        func set(font: UIFont) -> ToastUtilityNew.Builder {
+        func set(font: UIFont) -> ToastUtility.Builder {
             toast.font = font
             return self
         }
         
-        func setScreenTime(duration: TimeInterval) -> ToastUtilityNew.Builder {
+        func setScreenTime(duration: TimeInterval) -> ToastUtility.Builder {
             self.screenTime = duration
             return self
         }
         
-        func setHideAnimation(duration: TimeInterval) -> ToastUtilityNew.Builder {
+        func setHideAnimation(duration: TimeInterval) -> ToastUtility.Builder {
             self.hideAnimationDuration = duration
             return self
         }
         
-        func dynamicHeight() -> ToastUtilityNew.Builder {
+        func dynamicHeight() -> ToastUtility.Builder {
             if let heigth = toast.text?
                 .height(withConstrainedWidth: width, font: toast.font) {
                 toast.frame.size.height = heigth
